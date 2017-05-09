@@ -8,11 +8,11 @@ namespace Client
     {
         static void Main(string[] args)
         {
-            var response = GetClientToken();
-            CallApi(response);
+            var respCarbon = GetUserToken();
+            CallApi(respCarbon);
 
-            response = GetUserToken();
-            CallApi(response);
+            var respSilicon = GetClientToken();
+            CallApi(respSilicon);
         }
 
         static void CallApi(TokenResponse response)

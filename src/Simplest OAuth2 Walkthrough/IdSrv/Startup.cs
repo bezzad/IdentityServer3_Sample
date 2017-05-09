@@ -15,7 +15,7 @@ namespace IdSrv
                             .UseInMemoryScopes(Scopes.Get())
                             .UseInMemoryUsers(Users.Get()),
 
-                SigningCertificate = Certificate.Get(),
+                SigningCertificate = Certificate.Get(), // necessary for Flows.ClientCredentials
 
                 RequireSsl = false
             };
