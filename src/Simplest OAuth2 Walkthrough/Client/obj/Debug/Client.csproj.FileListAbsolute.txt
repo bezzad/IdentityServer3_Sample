@@ -1,0 +1,10 @@
+D:\Projects\IdentityServer3_Sample\src\Simplest OAuth2 Walkthrough\Client\bin\Debug\Client.exe.config
+D:\Projects\IdentityServer3_Sample\src\Simplest OAuth2 Walkthrough\Client\bin\Debug\Client.exe
+D:\Projects\IdentityServer3_Sample\src\Simplest OAuth2 Walkthrough\Client\bin\Debug\Client.pdb
+D:\Projects\IdentityServer3_Sample\src\Simplest OAuth2 Walkthrough\Client\bin\Debug\IdentityModel.Net45.dll
+D:\Projects\IdentityServer3_Sample\src\Simplest OAuth2 Walkthrough\Client\bin\Debug\Newtonsoft.Json.dll
+D:\Projects\IdentityServer3_Sample\src\Simplest OAuth2 Walkthrough\Client\bin\Debug\IdentityModel.Net45.pdb
+D:\Projects\IdentityServer3_Sample\src\Simplest OAuth2 Walkthrough\Client\bin\Debug\Newtonsoft.Json.xml
+D:\Projects\IdentityServer3_Sample\src\Simplest OAuth2 Walkthrough\Client\obj\Debug\Client.exe
+D:\Projects\IdentityServer3_Sample\src\Simplest OAuth2 Walkthrough\Client\obj\Debug\Client.pdb
+D:\Projects\IdentityServer3_Sample\src\Simplest OAuth2 Walkthrough\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
