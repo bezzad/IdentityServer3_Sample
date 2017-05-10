@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using IdentityServer3.Core.Models;
 
-namespace IdSrv
+namespace IdentityServer
 {
     static class Scopes
     {

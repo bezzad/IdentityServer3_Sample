@@ -1,9 +1,9 @@
-﻿using Microsoft.Owin.Hosting;
-using Serilog;
-using System;
+﻿using System;
 using System.Diagnostics;
+using Microsoft.Owin.Hosting;
+using Serilog;
 
-namespace IdSrv
+namespace IdentityServer
 {
     class Program
     {

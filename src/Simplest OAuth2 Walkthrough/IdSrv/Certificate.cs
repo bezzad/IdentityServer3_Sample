@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Security.Cryptography.X509Certificates;
 using System.IO;
+using System.Security.Cryptography.X509Certificates;
 
-namespace IdSrv
+namespace IdentityServer
 {
     static class Certificate
     {
@@ -17,11 +13,13 @@ namespace IdSrv
                 var assembly = typeof(Certificate).Assembly;
                 using (
                     var stream =
-                        assembly.GetManifestResourceStream("IdSrv.keys.pfx"))
+                        assembly.GetManifestResourceStream("IdentityServer.keys.pfx"))
                 {
                     var data = ReadStream(stream);
                     //LogManager.GetCurrentClassLogger().Info("data : " + Encoding.UTF8.GetString(data));
-                    return new X509Certificate2(data, "taaghcheThe#1", X509KeyStorageFlags.MachineKeySet);
+                    var x509 = new X509Certificate2(data, "taaghcheThe#1", X509KeyStorageFlags.MachineKeySet);
+                    var publicKey = x509.GetPublicKeyString();
+                    return x509;
                 }
             }
             catch (Exception ex)

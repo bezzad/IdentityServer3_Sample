@@ -1,7 +1,7 @@
-﻿using Owin;
-using IdentityServer3.Core.Configuration;
+﻿using IdentityServer3.Core.Configuration;
+using Owin;
 
-namespace IdSrv
+namespace IdentityServer
 {
     class Startup
     {

@@ -1,7 +1,7 @@
-﻿using IdentityServer3.Core.Services.InMemory;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using IdentityServer3.Core.Services.InMemory;
 
-namespace IdSrv
+namespace IdentityServer
 {
     static class Users
     {

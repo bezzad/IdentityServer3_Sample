@@ -15,8 +15,8 @@ namespace Apis
             app.UseIdentityServerBearerTokenAuthentication(new IdentityServerBearerTokenAuthenticationOptions
                 {
                     Authority = "http://localhost:5005",
-                    ValidationMode = ValidationMode.ValidationEndpoint,
-
+                    ValidationMode = ValidationMode.Both, // Use local validation for JWTs and the validation endpoint for reference tokens.
+                    EnableValidationResultCache = true,
                     RequiredScopes = new[] { "api1" }
                 });
 

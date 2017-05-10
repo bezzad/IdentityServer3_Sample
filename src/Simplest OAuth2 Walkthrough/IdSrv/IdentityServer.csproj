@@ -7,8 +7,8 @@
     <ProjectGuid>{6F2F9E05-F0A7-483E-AC06-7679750255CB}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IdSrv</RootNamespace>
-    <AssemblyName>IdSrv</AssemblyName>
+    <RootNamespace>IdentityServer</RootNamespace>
+    <AssemblyName>IdentityServer</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
