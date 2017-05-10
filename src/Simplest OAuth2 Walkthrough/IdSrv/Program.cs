@@ -1,6 +1,7 @@
 ﻿using Microsoft.Owin.Hosting;
 using Serilog;
 using System;
+using System.Diagnostics;
 
 namespace IdSrv
 {
@@ -15,9 +16,11 @@ namespace IdSrv
                 .CreateLogger();
 
             // hosting identityserver
-            using (WebApp.Start<Startup>("http://localhost:5005"))
+            var baseUrl = "http://localhost:5005";
+            using (WebApp.Start<Startup>(baseUrl))
             {
-                Console.WriteLine("server running...");
+                Console.WriteLine($"server running on {baseUrl} ...");
+                Process.Start(baseUrl);
                 Console.ReadLine();
             }
         }
