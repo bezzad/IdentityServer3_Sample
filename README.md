@@ -28,9 +28,9 @@ For more information go to [reference][1]
 
 ## [Introduction to OAuth 2][2]
 
-__OAuth 2__ is an authorization framework that enables applications to obtain limited access to user accounts on an HTTP service, such as Facebook or GitHub. It works by delegating user authentication to the service that hosts the user account, and authorizing third-party applications to access the user account. __OAuth 2__ provides authorization flows for web and desktop applications, and mobile devices.
+**OAuth 2** is an authorization framework that enables applications to obtain limited access to user accounts on an HTTP service, such as Facebook or GitHub. It works by delegating user authentication to the service that hosts the user account, and authorizing third-party applications to access the user account. **OAuth 2** provides authorization flows for web and desktop applications, and mobile devices.
 
-This informational guide is geared towards application developers, and provides an overview of __OAuth 2__ roles, authorization grant types, use cases, and flows.
+This informational guide is geared towards application developers, and provides an overview of **OAuth 2** roles, authorization grant types, use cases, and flows.
 
 <br/>
 
@@ -76,7 +76,7 @@ The actual flow of this process will differ depending on the authorization grant
 
 <blockquote>
 
-Before using __OAuth__ with your application, you must register your application with the service. This is done through a registration form in the "developer" or "API" portion of the service's website, where you will provide the following information (and probably details about your application):
+Before using **OAuth** with your application, you must register your application with the service. This is done through a registration form in the "developer" or "API" portion of the service's website, where you will provide the following information (and probably details about your application):
 
 * Application Name
 * Application Website
@@ -100,31 +100,31 @@ Once your application is registered, the service will issue `client credentials`
 
 <blockquote>
 
-In the Abstract Protocol Flow above, the first four steps cover obtaining an authorization grant and access token. The authorization grant type depends on the method used by the application to request authorization, and the grant types supported by the API. __OAuth 2__ defines four grant types, each of which is useful in different cases:
+In the Abstract Protocol Flow above, the first four steps cover obtaining an authorization grant and access token. The authorization grant type depends on the method used by the application to request authorization, and the grant types supported by the API. **OAuth 2** defines four grant types, each of which is useful in different cases:
 
-* __Authorization Code__: `used with server-side Applications`
+* **Authorization Code**: `used with server-side Applications`
 <br/><br/>
-The __authorization code__ grant type is the most commonly used because it is optimized for server-side applications, where source code is not publicly exposed, and Client Secret confidentiality can be maintained. This is a redirection-based flow, which means that the application must be capable of interacting with the user-agent (i.e. the user's web browser) and receiving API authorization codes that are routed through the user-agent. <br/><br/>
+The **authorization code** grant type is the most commonly used because it is optimized for server-side applications, where source code is not publicly exposed, and Client Secret confidentiality can be maintained. This is a redirection-based flow, which means that the application must be capable of interacting with the user-agent (i.e. the user's web browser) and receiving API authorization codes that are routed through the user-agent. <br/><br/>
 ![auth code flow](https://assets.digitalocean.com/articles/oauth/auth_code_flow.png)
 
 <br/><br/>
-* __Implicit__: `used with Mobile Apps or Web Applications (applications that run on the user's device)`
+* **Implicit**: `used with Mobile Apps or Web Applications (applications that run on the user's device)`
 <br/><br/>
-The __implicit__ grant type is used for mobile apps and web applications (i.e. applications that run in a web browser), where the client secret confidentiality is not guaranteed. The implicit grant type is also a redirection-based flow but the access token is given to the user-agent to forward to the application, so it may be exposed to the user and other applications on the user's device. Also, this flow does not authenticate the identity of the application, and relies on the redirect URI (that was registered with the service) to serve this purpose. <br/><br/>
+The **implicit** grant type is used for mobile apps and web applications (i.e. applications that run in a web browser), where the client secret confidentiality is not guaranteed. The implicit grant type is also a redirection-based flow but the access token is given to the user-agent to forward to the application, so it may be exposed to the user and other applications on the user's device. Also, this flow does not authenticate the identity of the application, and relies on the redirect URI (that was registered with the service) to serve this purpose. <br/><br/>
 The implicit grant type does not support refresh tokens. <br/>
 The implicit grant flow basically works as follows: the user is asked to authorize the application, then the authorization server passes the access token back to the user-agent, which passes it to the application.
 <br/><br/>
 ![implicit flow](https://assets.digitalocean.com/articles/oauth/implicit_flow.png)
 
 <br/><br/>
-* __Resource Owner Password Credentials__: `used with trusted Applications, such as those owned by the service itself`  
+* **Resource Owner Password Credentials**: `used with trusted Applications, such as those owned by the service itself`  
 <br/><br/>
-With the __resource owner password credentials__ grant type, the user provides their service credentials (username and password) directly to the application, which uses the credentials to obtain an access token from the service. This grant type should only be enabled on the authorization server if other flows are not viable. Also, it should only be used if the application is trusted by the user (e.g. it is owned by the service, or the user's desktop OS).
+With the **resource owner password credentials** grant type, the user provides their service credentials (username and password) directly to the application, which uses the credentials to obtain an access token from the service. This grant type should only be enabled on the authorization server if other flows are not viable. Also, it should only be used if the application is trusted by the user (e.g. it is owned by the service, or the user's desktop OS).
 
 <br/><br/>
-* __Client Credentials__: `used with Applications API access`
+* **Client Credentials**: `used with Applications API access`
 <br/><br/>
-The __client credentials__ grant type provides an application a way to access its own service account. Examples of when this might be useful include if an application wants to update its registered description or redirect URI, or access other data stored in its service account via the API.
+The **client credentials** grant type provides an application a way to access its own service account. Examples of when this might be useful include if an application wants to update its registered description or redirect URI, or access other data stored in its service account via the API.
 
 </blockquote>
 
@@ -135,7 +135,7 @@ For more information go to [reference][2]
 
 ## [Identity Server 3][3]
 
-__IdentityServer__ is a framework and a hostable component that allows implementing single sign-on and access control for modern web applications and APIs using protocols like OpenID Connect and OAuth2. It supports a wide range of clients like mobile, web, SPAs and desktop applications and is extensible to allow integration in new and existing architectures.
+**IdentityServer** is a framework and a hostable component that allows implementing single sign-on and access control for modern web applications and APIs using protocols like OpenID Connect and OAuth2. It supports a wide range of clients like mobile, web, SPAs and desktop applications and is extensible to allow integration in new and existing architectures.
 
 Most modern applications look more or less like this:
 
@@ -166,7 +166,7 @@ This leads to the following security architecture and usage of protocols:
 This divides the security concerns into two parts.
 
 <br/><br/>
-#### __Authentication__
+#### **Authentication**
 
 <blockquote>
 
@@ -182,7 +182,7 @@ OpenID Connect is the newest of the three, but is generally considered to be the
 
 </blockquote>
 
-#### __API Access__
+#### **API Access**
 
 <blockquote>
 
@@ -190,11 +190,11 @@ Applications have two fundamental ways with which they communicate with APIs –
 
 <br/>
 
-__OAuth2__ is a protocol that allows applications to request access tokens from a security token service and use them to communicate with APIs. This reduces complexity on both the client applications as well as the APIs since authentication and authorization can be centralized.
+**OAuth2** is a protocol that allows applications to request access tokens from a security token service and use them to communicate with APIs. This reduces complexity on both the client applications as well as the APIs since authentication and authorization can be centralized.
 
 </blockquote>
 
-#### __OpenID Connect and OAuth2 – better together__
+#### **OpenID Connect and OAuth2 – better together**
 
 <blockquote>
 
@@ -208,28 +208,28 @@ This is why we believe that the combination of OpenID Connect and OAuth2 is the 
 
 <br/>
 
-### __High Level Features__
+### **High Level Features**
 
-##### __Authentication as a Service__
+##### **Authentication as a Service**
 
 <blockquote>
 
 Centralized login logic and workflow at a single & well-secured place.
 </blockquote>
 
-#### __Single Sign-on / Sign-out__
+#### **Single Sign-on / Sign-out**
 
 <blockquote>
 Single sign-on (and out) over multiple application types like web or mobile.
 </blockquote>
 
-#### __Access Control for APIs__
+#### **Access Control for APIs**
 
 <blockquote>
 Issue access tokens for APIs for various types of clients, e.g. server to server, web applications, SPAs and native/mobile apps.
 </blockquote>
 
-#### __Federation__
+#### **Federation**
 
 <blockquote>
 
@@ -237,7 +237,7 @@ Support for external social identity providers like Google, Facebook etc, as wel
 
 </blockquote>
 
-#### __Customization everywhere__
+#### **Customization everywhere**
 
 <blockquote>
 
@@ -246,22 +246,22 @@ The most important part - every aspect of IdentityServer can be customized to fi
 
 <br/>
 
-### __Terminology__
+### **Terminology**
 
 The specs, documentation and object model use a certain terminology that you should be aware of.
 
 ![terminology](http://identityserver.github.io/Documentation/assets/images/terminology.png)
 
-#### __OpenID Connect Provider (OP)__
+#### **OpenID Connect Provider (OP)**
 
 <blockquote>
 
-__IdentityServer__ is an OpenID Connect provider - it implements the OpenID Connect protocol (and __OAuth2__ as well).
+**IdentityServer** is an OpenID Connect provider - it implements the OpenID Connect protocol (and **OAuth2** as well).
 <br/>
 Different literature uses different terms for the same role - you probably also find security token service, identity provider, authorization server, ```IP-STS``` and more.
 <br/>
 But they are in a nutshell all the same: a piece of software that issues security tokens to clients.
-__IdentityServer__ has a number of jobs and features - including: 
+**IdentityServer** has a number of jobs and features - including: 
 <br/>
 * authenticate users using a local account store or via an external identity provider
 * provide session management and single sign-on
@@ -271,7 +271,7 @@ __IdentityServer__ has a number of jobs and features - including:
 
 </blockquote>
 
-#### __Client__
+#### **Client**
 
 <blockquote>
 
@@ -281,7 +281,7 @@ Examples for clients are web applications, native mobile or desktop applications
 
 </blockquote>
 
-#### __User__
+#### **User**
 
 <blockquote>
 
@@ -289,7 +289,7 @@ A user is a human that is using a registered client to access his or her data.
 
 </blockquote>
 
-#### __Scope__
+#### **Scope**
 
 <blockquote>
 
@@ -297,16 +297,16 @@ Scopes are identifiers for resources that a client wants to access. This identif
 By default every client is allowed to request tokens for every scope, but you can restrict that.
 They come in two flaw-ours.
 <br/>
-* __Identity scopes__<br/>
+* **Identity scopes**<br/>
 Requesting identity information (aka claims) about a user, e.g. his name or email address is modeled as a scope in OpenID Connect.
 <br/>
 There is e.g. a scope called `profile` that includes first name, last name, preferred username, gender, profile picture and more. You can read about the standard scopes [here](http://openid.net/specs/openid-connect-core-1_0.html#ScopeClaims) and you can create your own scopes in IdentityServer to model your own requirements.
 <br/><br/>
-* __Resource scopes__<br/>
+* **Resource scopes**<br/>
 Resource scopes identify web APIs (also called resource servers) - you could have e.g. a scope named `calendar` that represents your calendar API.
 </blockquote>
 
-#### __Claims__
+#### **Claims**
 
 <blockquote>
 
@@ -341,10 +341,10 @@ var roleScope = new Scope
 
 <br/>
 
-The ‘__AlwaysIncludeInIdentityToken__’ property specifies that a certain claim should always be part of the identity token, even when an access token for the userinfo endpoint is requested.
+The ‘**AlwaysIncludeInIdentityToken**’ property specifies that a certain claim should always be part of the identity token, even when an access token for the userinfo endpoint is requested.
 </blockquote>
 
-#### __Authentication/Token Request__
+#### **Authentication/Token Request**
 
 <blockquote>
 
@@ -352,7 +352,7 @@ Clients request tokens from the OP. Depending on the scopes requested, the OP wi
 
 </blockquote>
 
-#### __Identity Token__
+#### **Identity Token**
 
 <blockquote>
 
@@ -360,7 +360,7 @@ An identity token represents the outcome of an authentication process. It contai
 
 </blockquote>
 
-#### __Access Token__
+#### **Access Token**
 
 <blockquote>
 
@@ -377,14 +377,14 @@ For more information go to the [documentation for the latest version](https://id
 
 ## Authentication Service Methodology
 
-Authentication service is included four project which implements the __OAuth2__ client credential grant types with below figures:
+Authentication service is included four project which implements the **OAuth2** client credential grant types with below figures:
 
 #### Introduction to [OAuth 2 Client Credential Grant Type](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2#grant-type-client-credentials)
 
 <blockquote>
 
-This project use [IdentityServer3][3] by OAuth __client credential__ grant types for authenticate all clients as API or end point clients. <br/><br/>
-The __client credentials__ grant type provides an application a way to access its own service account. Examples of when this might be useful include if an application wants to update its registered description or redirect __URI__, or access other data stored in its service account via the __API__.
+This project use [IdentityServer3][3] by OAuth **client credential** grant types for authenticate all clients as API or end point clients. <br/><br/>
+The **client credentials** grant type provides an application a way to access its own service account. Examples of when this might be useful include if an application wants to update its registered description or redirect **URI**, or access other data stored in its service account via the **API**.
 <br/><br/>
 IdentityServer publishes a [discovery document](http://localhost:5005/.well-known/openid-configuration) where you can find metadata and links to all the endpoints, key material, etc, like the below data:
 <br/>
@@ -450,13 +450,13 @@ IdentityServer publishes a [discovery document](http://localhost:5005/.well-know
 
 <br/>
 
-In the [IdentityServer meta data documentation](http://localhost:5005/.well-known/openid-configuration) you can see the authentication server addresses and meta data like `token request` address by name "[token_endpoint](http://localhost:5005/connect/token)" or supported scopes name by name "__scopes_supported__" or public key and other security data by name "__jwks_uri__" and etc.
+In the [IdentityServer meta data documentation](http://localhost:5005/.well-known/openid-configuration) you can see the authentication server addresses and meta data like `token request` address by name "[token_endpoint](http://localhost:5005/connect/token)" or supported scopes name by name "**scopes_supported**" or public key and other security data by name "**jwks_uri**" and etc.
 
 <br/>
 
-* __Client Credentials Flow__
+* **Client Credentials Flow**
 <br/>
-The application requests an access token by sending its credentials, its __client ID__ and __client secret__, to the authorization server. An example POST request might look like the following:
+The application requests an access token by sending its credentials, its **client ID** and **client secret**, to the authorization server. An example POST request might look like the following:
 <br/>
 
   ```
@@ -484,16 +484,16 @@ The application requests an access token by sending its credentials, its __clien
 
   Now the application is authorized to use its own account! <br/>
 
-* __Access Token Usage__
+* **Access Token Usage**
 <br/>
-Once the application has an access token, it may use the token to access the user's account via the __API__, limited to the scope of access, until the token expires or is revoked.
+Once the application has an access token, it may use the token to access the user's account via the **API**, limited to the scope of access, until the token expires or is revoked.
 <br/>
 An access token is a data of [JWT (JSON Web Token)][4] that you can to open or validate it from reference web site's for manually decoding.
 [JWT][4] are an open, industry standard RFC 7519 method for representing claims securely between two parties.
 <br/>
 [JWT.IO][4] allows you to decode, verify and generate JWT.
 <br/><br/>
-__What is the JSON Web Token structure?__ 
+**What is the JSON Web Token structure?** 
 
 <blockquote>
 
@@ -512,7 +512,7 @@ JSON Web Tokens consist of three parts separated by dots (```.```), which are:
 
    Let's break down the different parts.
 <br/><br/>
-__Header__
+**Header**
 <br/>
 The header typically consists of two parts: the type of the token, which is JWT, and the hashing algorithm being used, such as HMAC SHA256 or RSA.
 <br/>
@@ -528,22 +528,22 @@ For example:
 
    <br/>
 
-   Then, this JSON is __[Base64 Url](https://www.base64decode.org)__ encoded to form the first part of the JWT.
+   Then, this JSON is **[Base64 Url](https://www.base64decode.org)** encoded to form the first part of the JWT.
 <br/><br/>
-   __Payload__
+   **Payload**
 <br/>
 The second part of the token is the payload, which contains the claims. Claims are statements about an entity (typically, the user) and additional metadata. There are three types of claims: reserved, public, and private claims. <br/>
 
-  * __Reserved claims__: These is a set of predefined claims which are not mandatory but recommended, to provide a set of useful, interoperable claims. Some of them are: __iss__ (issuer), __exp__ (expiration time), __sub__ (subject), __aud__ (audience), and others.
+  * **Reserved claims**: These is a set of predefined claims which are not mandatory but recommended, to provide a set of useful, interoperable claims. Some of them are: **iss** (issuer), **exp** (expiration time), **sub** (subject), **aud** (audience), and others.
 <br/>
 
 > Notice that the claim names are only three characters long as JWT is meant to be compact.
 <br/>
 
-  * __Public claims__: These can be defined at will by those using JWTs. But to avoid collisions they should be defined in the IANA JSON Web Token Registry or be defined as a URI that contains a collision resistant namespace.
+  * **Public claims**: These can be defined at will by those using JWTs. But to avoid collisions they should be defined in the IANA JSON Web Token Registry or be defined as a URI that contains a collision resistant namespace.
 <br/>
 
-  * __Private claims__: These are the custom claims created to share information between parties that agree on using them.
+  * **Private claims**: These are the custom claims created to share information between parties that agree on using them.
 
   An example of payload could be:
 <br/>
@@ -572,10 +572,10 @@ The second part of the token is the payload, which contains the claims. Claims a
   }
   ```
 
-   The payload is then __[Base64 Url](https://www.base64decode.org)__ encoded to form the second part of the JSON Web Token.
+   The payload is then **[Base64 Url](https://www.base64decode.org)** encoded to form the second part of the JSON Web Token.
    <br/><br/>
 
-  __Signature__
+  **Signature**
 <br/>
 To create the signature part you have to take the encoded header, the encoded payload, a secret, the algorithm specified in the header, and sign that.
 <br/>
@@ -591,7 +591,7 @@ For example if you want to use the HMAC SHA256 algorithm, the signature will be 
 
   The signature is used to verify that the sender of the JWT is who it says it is and to ensure that the message wasn't changed along the way.
 <br/><br/>
-__Putting all together__
+**Putting all together**
 <br/>
 The output is three Base64 strings separated by dots that can be easily passed in HTML and HTTP environments, while being more compact when compared to XML-based standards such as SAML.
 <br/>
@@ -604,11 +604,11 @@ If you want to play with JWT and put these concepts into practice, you can use [
 ![legacy-app-auth-5](https://cdn.auth0.com/blog/legacy-app-auth/legacy-app-auth-5.png)
 <br/><br/>
 
-  * __How do JSON Web Tokens work?__
+  * **How do JSON Web Tokens work?**
 <br/>
 In authentication, when the user successfully logs in using their credentials, a JSON Web Token will be returned and must be saved locally (typically in local storage, but cookies can be also used), instead of the traditional approach of creating a session in the server and returning a cookie.
 <br/>
-Whenever the user wants to access a protected route or resource, the user agent should send the JWT, typically in the __Authorization__ header using the __Bearer__ schema. The content of the header should look like the following:
+Whenever the user wants to access a protected route or resource, the user agent should send the JWT, typically in the **Authorization** header using the **Bearer** schema. The content of the header should look like the following:
 
   ```
    Authorization: Bearer <token>
@@ -624,16 +624,16 @@ The following diagram shows this process:
 
 </blockquote>
 
-Here is an example of an __API__ request, using ```curl```. Note that it includes the access token:
+Here is an example of an **API** request, using ```curl```. Note that it includes the access token:
 <br/>
 
   ```curl -X POST -H 'Authorization: Bearer ACCESS_TOKEN' 'https://localhost:5005/v1/$OBJECT'```
 <br/><br/>
-Assuming the access token is valid, the __API__ will process the request according to its __API__ specifications. If the access token is expired or otherwise invalid, the __API__ will return an "invalid_request" error.
+Assuming the access token is valid, the **API** will process the request according to its **API** specifications. If the access token is expired or otherwise invalid, the **API** will return an "invalid_request" error.
 <br/><br/>
 
 
-* __Access Token Validation__
+* **Access Token Validation**
 <br/>
 OWIN Middleware to validate access tokens from IdentityServer v3. <br/>
 You can either validate the tokens locally (JWTs only) or use the IdentityServer's access token validation endpoint (JWTs and reference tokens).
@@ -659,7 +659,7 @@ You can either validate the tokens locally (JWTs only) or use the IdentityServer
       });
   ```
 
-  We can to validate access token without local checking and use self authentication server instead that. For this job's we must post the __AccessToken__ to one of authentication server API's methods by name __accesstokenvalidation__ like following: <br/>
+  We can to validate access token without local checking and use self authentication server instead that. For this job's we must post the **AccessToken** to one of authentication server API's methods by name **accesstokenvalidation** like following: <br/>
 
   ```
   POST            http://localhost:5005/connect/accesstokenvalidation
@@ -670,7 +670,7 @@ You can either validate the tokens locally (JWTs only) or use the IdentityServer
   }
   ```
 
-  If the __AccessToken__ is valid then response message is like this: <br/>
+  If the **AccessToken** is valid then response message is like this: <br/>
 
   ```json
   {
@@ -704,19 +704,19 @@ You can either validate the tokens locally (JWTs only) or use the IdentityServer
   }
   ```
 
-* __Refresh Token Flow__<br/>
+* **Refresh Token Flow**<br/>
 <br/>
-After an access token expires, using it to make a request from the __API__ will result in an "Invalid Token Error". At this point, if a refresh token was included when the original access token was issued, it can be used to request a fresh access token from the authorization server.
+After an access token expires, using it to make a request from the **API** will result in an "Invalid Token Error". At this point, if a refresh token was included when the original access token was issued, it can be used to request a fresh access token from the authorization server.
 <br/>
-Here is an example __POST__ request, using a refresh token to obtain a new access token: <br/><br/>
-`https://localhost:5005/v1/oauth/token?grant_type=__refresh_token__&client_id=__CLIENT_ID__&client_secret=__CLIENT_SECRET__&refresh_token=__REFRESH_TOKEN__`
+Here is an example **POST** request, using a refresh token to obtain a new access token: <br/><br/>
+`https://localhost:5005/v1/oauth/token?grant_type=**refresh_token**&client_id=**CLIENT_ID**&client_secret=**CLIENT_SECRET**&refresh_token=**REFRESH_TOKEN**`
 
 <br/>
 
 </blockquote>
 </blockquote>
 
-* ____Sample.IdentityServer__
+* ****Sample.IdentityServer**
 
 <blockquote>
 
@@ -734,7 +734,7 @@ There are other more advanced walk-throughs in the docs that you could do afterw
 
 <br/>
 
-  + __Setting up IdentityServer__
+  + **Setting up IdentityServer**
 <br/>
 First we will create a console host and set up IdentityServer.
 Start by creating a standard console application and add IdentityServer via nuget:
@@ -746,8 +746,8 @@ Start by creating a standard console application and add IdentityServer via nuge
 
 <br/>
 
-  + __Registering the API__ <br/>
-APIs are modeled as scopes - you need to register all APIs that you want to be able to request access tokens for. For that we create a class that returns a list of ```Scope``` at __Config/Scopes.cs__: <br/>
+  + **Registering the API** <br/>
+APIs are modeled as scopes - you need to register all APIs that you want to be able to request access tokens for. For that we create a class that returns a list of ```Scope``` at **Config/Scopes.cs**: <br/>
 
   ```cs
     using IdentityServer3.Core.Models;
@@ -771,10 +771,10 @@ APIs are modeled as scopes - you need to register all APIs that you want to be a
 
 <br/>
 
-* __Registering the Client__
+* **Registering the Client**
 For now we want to register a single client. This client will be able to request a token for the ```api1``` scope. For our first iteration, there will be no human involved and the client will simply request the token on behalf of itself (think machine to machine communication). Later we will add a user to the picture.
 <br/><br/>
-For this client we configure the following things at __Config/Clients.cs__:
+For this client we configure the following things at **Config/Clients.cs**:
 <br/><br/>
 Display name and id (unique name)
   + The client secret (used to authenticate the client against the token endpoint)
@@ -841,10 +841,10 @@ Display name and id (unique name)
     }
   ```
 
-> `Note:` If the client use __ClientCredentials__ flow then must be set the __SigningCertificate__ property of __IdentityServerOptions__ instance at identity server __Startup.cs__ file's to __private_key_file.pfx__ files.
+> `Note:` If the client use **ClientCredentials** flow then must be set the **SigningCertificate** property of **IdentityServerOptions** instance at identity server **Startup.cs** file's to **private_key_file.pfx** files.
 <br/>
 
-* __Configuring IdentityServer__ <br/>
+* **Configuring IdentityServer** <br/>
 IdentityServer is implemented as OWIN middleware. It is configured in the `Startup` class using the `UseIdentityServer` extension method. The following snippets sets up a bare bones server with our scopes and clients. We also set up an empty list of users - we will add users later.
 <br/>
 
@@ -878,7 +878,7 @@ namespace IdSrv
 </blockquote>
 </blockquote>
 
-* ____Sample.Authentication Client__
+* ****Sample.Authentication Client**
 
 <blockquote>
 
@@ -888,12 +888,12 @@ This package used [RestSharp](https://github.com/restsharp/RestSharp) rest clien
 <br/>
 Authenticator is a tool just for getting tokens from auth server.
 <br/>
-There is an implementation which get __clientId__ and __clientSecret__ and do the jobs for authentication with an Oauth2 server. IRestRequest from [RestSharp](https://github.com/restsharp/RestSharp) package is parameters for RestClient.
+There is an implementation which get **clientId** and **clientSecret** and do the jobs for authentication with an Oauth2 server. IRestRequest from [RestSharp](https://github.com/restsharp/RestSharp) package is parameters for RestClient.
 <br/>
 > This package is ready to use by Dependency injector containers
 <br/>
 
-__How to implement client authenticator__
+**How to implement client authenticator**
 <br/>
 First install a nuget package for an OAuth2 client helper library:
 <br/>
@@ -953,12 +953,12 @@ If you call both snippets, you should see below result: <br/> <br/>
 </blockquote>
 </blockquote>
 
-* __Sample.AuthenticationServer__
+* **Sample.AuthenticationServer**
 
 <blockquote>
 
 This package contains tools for validating request in [Owin](http://owin.org). There is a middle ware that do the jobs for this. In this part we will create a middleware to add it at all web APIs that is configured to require an access token from the IdentityServer we just set up.<br/>
-In the other words, This project has a extension class as __[Katana Access Token Validation Middleware](https://identityserver.github.io/Documentation/docsv2/consuming/overview.html)__.
+In the other words, This project has a extension class as **[Katana Access Token Validation Middleware](https://identityserver.github.io/Documentation/docsv2/consuming/overview.html)**.
 <br/>
 Consuming IdentityServer access tokens in web APIs is easy, you simply drop in our token validation middleware into your Katana pipeline and set the URL to IdentityServer. All configuration and validation is done for you. 
 <br/>
@@ -999,7 +999,7 @@ The middleware will first inspect the token - if it is a [JWT][4], token validat
 
 <br/>
 
-So, when an API want to use another API in secure level, should sent self __Access Token__ to that. Then token receiver API's validate the __Access Token__ by this middleware without sending token to main authentication server to validate the token is true or not.
+So, when an API want to use another API in secure level, should sent self **Access Token** to that. Then token receiver API's validate the **Access Token** by this middleware without sending token to main authentication server to validate the token is true or not.
 
 <br/>
 
