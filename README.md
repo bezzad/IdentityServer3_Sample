@@ -300,10 +300,13 @@ They come in two flaw-ours.
 * __Identity scopes__<br/>
 Requesting identity information (aka claims) about a user, e.g. his name or email address is modeled as a scope in OpenID Connect.
 <br/>
-There is e.g. a scope called `profile` that includes first name, last name, preferred username, gender, profile picture and more. You can read about the standard scopes [here](http://openid.net/specs/openid-connect-core-1_0.html#ScopeClaims) and you can create your own scopes in IdentityServer to model your own requirements.
+
+  There is e.g. a scope called `profile` that includes first name, last name, preferred username, gender, profile picture and more. You can read about the standard scopes [here](http://openid.net/specs/openid-connect-core-1_0.html#ScopeClaims) and you can create your own scopes in IdentityServer to model your own requirements.
 <br/><br/>
+
 * __Resource scopes__<br/>
-Resource scopes identify web APIs (also called resource servers) - you could have e.g. a scope named `calendar` that represents your calendar API.
+
+  Resource scopes identify web APIs (also called resource servers) - you could have e.g. a scope named `calendar` that represents your calendar API.
 </blockquote>
 
 #### __Claims__
