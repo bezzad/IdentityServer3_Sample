@@ -611,9 +611,7 @@ If you want to play with JWT and put these concepts into practice, you can use [
 
   * __How do JSON Web Tokens work?__ <br/>
   In authentication, when the user successfully logs in using their credentials, a JSON Web Token will be returned and must be saved locally (typically in local storage, but cookies can be also used), instead of the traditional approach of creating a session in the server and returning a cookie.
-<br/>
-
-    Whenever the user wants to access a protected route or resource, the user agent should send the JWT, typically in the __Authorization__ header using the __Bearer__ schema. The content of the header should look like the following:
+  Whenever the user wants to access a protected route or resource, the user agent should send the JWT, typically in the __Authorization__ header using the __Bearer__ schema. The content of the header should look like the following:
 
   ```
    Authorization: Bearer <token>
@@ -716,7 +714,7 @@ You can either validate the tokens locally (JWTs only) or use the IdentityServer
 <br/>
 
   Here is an example __POST__ request, using a refresh token to obtain a new access token: <br/><br/>
-`https://localhost:5005/v1/oauth/token?grant_type=__refresh_token__&client_id=__CLIENT_ID__&client_secret=__CLIENT_SECRET__&refresh_token=__REFRESH_TOKEN__`
+  `https://localhost:5005/v1/oauth/token?grant_type=__refresh_token__&client_id=CLIENT_ID&client_secret=CLIENT_SECRET&refresh_token=REFRESH_TOKEN`
 
 <br/>
 
@@ -884,7 +882,7 @@ namespace IdSrv
 </blockquote>
 </blockquote>
 
-* ____Sample.Authentication Client__
+* __Sample.Authentication Client__
 
 <blockquote>
 
