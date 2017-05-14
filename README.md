@@ -482,15 +482,14 @@ The application requests an access token by sending its credentials, its __clien
     }
   ```
 
-  Now the application is authorized to use its own account!
-<br/>
+  Now the application is authorized to use its own account! <br/>
 
 * __Access Token Usage__
 <br/>
 Once the application has an access token, it may use the token to access the user's account via the __API__, limited to the scope of access, until the token expires or is revoked.
 <br/>
 An access token is a data of [JWT (JSON Web Token)][4] that you can to open or validate it from reference web site's for manually decoding.
-[JWT (JSON Web Tokens)][4] are an open, industry standard RFC 7519 method for representing claims securely between two parties.
+[JWT][4] are an open, industry standard RFC 7519 method for representing claims securely between two parties.
 <br/>
 [JWT.IO][4] allows you to decode, verify and generate JWT.
 <br/><br/>
