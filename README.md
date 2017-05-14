@@ -1,7 +1,7 @@
 # IdentityServer3 Sample
 Sample authentication service project of IdentityServer3 for implements the OAuth2 client credential grant types.
 
-The [|Central Authentication Service (CAS)](https://en.wikipedia.org/wiki/Central_Authentication_Service) is a [single sign-on](https://en.wikipedia.org/wiki/Single_sign-on) protocol for the [web](https://en.wikipedia.org/wiki/World_Wide_Web). Its purpose is to permit a user to access multiple applications while providing their credentials (such as userid and password) only once. It also allows web applications to authenticate users without gaining access to a user's security credentials, such as a password.
+The [Central Authentication Service (CAS)](https://en.wikipedia.org/wiki/Central_Authentication_Service) is a [single sign-on](https://en.wikipedia.org/wiki/Single_sign-on) protocol for the [web](https://en.wikipedia.org/wiki/World_Wide_Web). Its purpose is to permit a user to access multiple applications while providing their credentials (such as userid and password) only once. It also allows web applications to authenticate users without gaining access to a user's security credentials, such as a password.
 
 <br/>
 
@@ -495,6 +495,7 @@ An access token is a data of [JWT (JSON Web Token)][4] that you can to open or v
 [JWT.IO][4] allows you to decode, verify and generate JWT.
 <br/><br/>
 __What is the JSON Web Token structure?__ 
+
 <blockquote>
 
 JSON Web Tokens consist of three parts separated by dots (```.```), which are:
@@ -519,12 +520,12 @@ The header typically consists of two parts: the type of the token, which is JWT,
 For example:
 <br/>
 
-    ```json
-    {
-        "alg": "RS256",
-        "typ": "JWT"
-    }
-    ```
+  ```json
+  {
+      "alg": "RS256",
+      "typ": "JWT"
+  }
+  ```
 
    <br/>
 
@@ -533,12 +534,16 @@ For example:
    __Payload__
 <br/>
 The second part of the token is the payload, which contains the claims. Claims are statements about an entity (typically, the user) and additional metadata. There are three types of claims: reserved, public, and private claims. <br/>
+
   * __Reserved claims__: These is a set of predefined claims which are not mandatory but recommended, to provide a set of useful, interoperable claims. Some of them are: __iss__ (issuer), __exp__ (expiration time), __sub__ (subject), __aud__ (audience), and others.
 <br/>
-     > Notice that the claim names are only three characters long as JWT is meant to be compact.</pre>
+
+> Notice that the claim names are only three characters long as JWT is meant to be compact.
 <br/>
+
   * __Public claims__: These can be defined at will by those using JWTs. But to avoid collisions they should be defined in the IANA JSON Web Token Registry or be defined as a URI that contains a collision resistant namespace.
 <br/>
+
   * __Private claims__: These are the custom claims created to share information between parties that agree on using them.
 
   An example of payload could be:
@@ -599,15 +604,15 @@ If you want to play with JWT and put these concepts into practice, you can use [
 <br/><br/>
 ![legacy-app-auth-5](https://cdn.auth0.com/blog/legacy-app-auth/legacy-app-auth-5.png)
 <br/><br/>
+
   * __How do JSON Web Tokens work?__
 <br/>
 In authentication, when the user successfully logs in using their credentials, a JSON Web Token will be returned and must be saved locally (typically in local storage, but cookies can be also used), instead of the traditional approach of creating a session in the server and returning a cookie.
 <br/>
 Whenever the user wants to access a protected route or resource, the user agent should send the JWT, typically in the __Authorization__ header using the __Bearer__ schema. The content of the header should look like the following:
-<br/>
 
   ```
-  Authorization: Bearer <token>
+   Authorization: Bearer <token>
   ```
 
   This is a stateless authentication mechanism as the user state is never saved in server memory. The server's protected routes will check for a valid JWT in the Authorization header, and if it's present, the user will be allowed to access protected resources. As JWTs are self-contained, all the necessary information is there, reducing the need to query the database multiple times.<br/><br/>
