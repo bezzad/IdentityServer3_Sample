@@ -714,7 +714,7 @@ You can either validate the tokens locally (JWTs only) or use the IdentityServer
 <br/>
 
   Here is an example __POST__ request, using a refresh token to obtain a new access token: <br/><br/>
-  `https://localhost:5005/v1/oauth/token?grant_type=__refresh_token__&client_id=CLIENT_ID&client_secret=CLIENT_SECRET&refresh_token=REFRESH_TOKEN`
+  `https://localhost:5005/v1/oauth/token?grant_type=refresh_token&client_id=CLIENT_ID&client_secret=CLIENT_SECRET&refresh_token=REFRESH_TOKEN`
 
 <br/>
 
