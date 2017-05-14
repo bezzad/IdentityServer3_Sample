@@ -487,7 +487,8 @@ In the [IdentityServer meta data documentation](http://localhost:5005/.well-know
 
 * __Access Token Usage__
 <br/>
-Once the application has an access token, it may use the token to access the user's account via the __API__, limited to the scope of access, until the token expires or is revoked.
+
+  Once the application has an access token, it may use the token to access the user's account via the __API__, limited to the scope of access, until the token expires or is revoked.
 <br/>
 An access token is a data of [JWT (JSON Web Token)][4] that you can to open or validate it from reference web site's for manually decoding.
 [JWT][4] are an open, industry standard RFC 7519 method for representing claims securely between two parties.
