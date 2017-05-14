@@ -609,18 +609,18 @@ If you want to play with JWT and put these concepts into practice, you can use [
 ![legacy-app-auth-5](https://cdn.auth0.com/blog/legacy-app-auth/legacy-app-auth-5.png)
 <br/><br/>
 
-  * __How do JSON Web Tokens work?__
+  * __How do JSON Web Tokens work?__ <br/>
+  In authentication, when the user successfully logs in using their credentials, a JSON Web Token will be returned and must be saved locally (typically in local storage, but cookies can be also used), instead of the traditional approach of creating a session in the server and returning a cookie.
 <br/>
-In authentication, when the user successfully logs in using their credentials, a JSON Web Token will be returned and must be saved locally (typically in local storage, but cookies can be also used), instead of the traditional approach of creating a session in the server and returning a cookie.
-<br/>
-Whenever the user wants to access a protected route or resource, the user agent should send the JWT, typically in the __Authorization__ header using the __Bearer__ schema. The content of the header should look like the following:
+
+    Whenever the user wants to access a protected route or resource, the user agent should send the JWT, typically in the __Authorization__ header using the __Bearer__ schema. The content of the header should look like the following:
 
   ```
    Authorization: Bearer <token>
   ```
 
   This is a stateless authentication mechanism as the user state is never saved in server memory. The server's protected routes will check for a valid JWT in the Authorization header, and if it's present, the user will be allowed to access protected resources. As JWTs are self-contained, all the necessary information is there, reducing the need to query the database multiple times.<br/><br/>
-This allows you to fully rely on data APIs that are stateless and even make requests to downstream services. It doesn't matter which domains are serving your APIs, so Cross-Origin Resource Sharing (CORS) won't be an issue as it doesn't use cookies.
+  This allows you to fully rely on data APIs that are stateless and even make requests to downstream services. It doesn't matter which domains are serving your APIs, so Cross-Origin Resource Sharing (CORS) won't be an issue as it doesn't use cookies.
 <br/>
 The following diagram shows this process:
 <br/><br/>
@@ -711,17 +711,18 @@ You can either validate the tokens locally (JWTs only) or use the IdentityServer
 
 * __Refresh Token Flow__<br/>
 <br/>
-After an access token expires, using it to make a request from the __API__ will result in an "Invalid Token Error". At this point, if a refresh token was included when the original access token was issued, it can be used to request a fresh access token from the authorization server.
+
+  After an access token expires, using it to make a request from the __API__ will result in an "Invalid Token Error". At this point, if a refresh token was included when the original access token was issued, it can be used to request a fresh access token from the authorization server.
 <br/>
-Here is an example __POST__ request, using a refresh token to obtain a new access token: <br/><br/>
+
+  Here is an example __POST__ request, using a refresh token to obtain a new access token: <br/><br/>
 `https://localhost:5005/v1/oauth/token?grant_type=__refresh_token__&client_id=__CLIENT_ID__&client_secret=__CLIENT_SECRET__&refresh_token=__REFRESH_TOKEN__`
 
 <br/>
 
 </blockquote>
-</blockquote>
 
-* ____Sample.IdentityServer__
+* __Sample.IdentityServer__
 
 <blockquote>
 
